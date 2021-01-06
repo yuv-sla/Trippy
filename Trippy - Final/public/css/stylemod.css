@@ -1,0 +1,75 @@
+.modal-dialog {
+   position: absolute;
+   top: 300px;
+   right: 100px;
+   bottom: 0;
+   left: 0;
+   z-index: 10040;
+   overflow: auto;
+   overflow-y: auto;
+   line-height: 20px;
+   margin-bottom: 10px;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top: 10px;
+   width: 95% !important;
+}
+.modal_btn{
+  position: absolute;
+  right:120px;
+  bottom: 80px;
+}
+.modal-content{
+  background: linear-gradient(180deg, #BFA9E6 0%, #BFA9E6 100%);
+  /*background: linear-gradient(180deg, #7800A3  0%, #EFC2FF 100%);*/
+}
+
+.modal-title{
+  color: white;
+  font-style: bold;
+  font-size: 20px;
+  text-align: center;
+}
+.modal-body{
+  -webkit-text-fill-color:white;
+  font-size: 17px;
+  display: inline-block;
+}
+
+.btn btn-primary{
+    -webkit-text-fill-color:white;
+    width: 20px;
+    height:15px;
+    font-size: 14px;
+}
+
+.btn btn-secondary{
+  -webkit-text-fill-color:white;
+  font-size: 14px;
+}
+
+.fa fa-check-circle-o fa-4x{
+  color: green;
+}
+
+/** Yuval Added */
+.modal{
+  background-color: #ffffff3d !important;
+  width:100% !important;
+  max-height: 100% !important;
+}
+
+.modal .modal-footer{
+  background-color: transparent !important;
+}
+
+.fs{
+  font-size: 17px;
+}
+.close {
+  text-align: left;
+  font-size: 36px;
+}
+button:focus{
+  background-color: linear-gradient(180deg, #BFA9E6 0%, #BFA9E6 100%) !important;
+}

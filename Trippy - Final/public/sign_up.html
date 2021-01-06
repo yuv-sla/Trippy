@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/sign_up_styles.css">
+  <!--bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<!--fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://bootstrapformhelpers.com/assets/css/bootstrap-formhelpers.min.css">
+
+	<!--Material Design-->
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!--birthdate-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!--Tags-->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+	<link rel="stylesheet" href="css/tag.css" />
+
+    <!--Form Validation -->
+  <link rel="stylesheet" href="css/form_validation.css" />
+
+
+
+</head>
+<body>
+  <header>
+		<div id="header" id="rowPage1">
+			<div class="mdc-top-app-bar__row">
+				<button id="menu" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+				<a href="javascript:history.back()" id="backBtn">
+					<button id="notifications" id="back1" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">keyboard_backspace</button>
+				</a>
+			</div>
+		</div>
+	</header>
+  <section>
+  <h1 class="page_title">Sign Up</h1>
+  <div class="inputsDiv">
+  <form class="needs-validation" id="form1" name="form">
+    <div class="form-group input-group" id="firstName">
+    <input name="" class="form-control" placeholder="First Name" type="text" id="firstNameInput" required>
+    <i class="fa fa-user" id="icon"></i>
+    </div> 
+    <div class="form-group input-group" id="lastName">
+    <input name="" class="form-control" placeholder="Last Name" type="text" id="lastNameInput" required>
+    </div> 
+    <div class="form-group input-group">
+    <input name="" class="form-control" placeholder="Email Address" type="email" id="emailInput" required>
+    <i class="fa fa-envelope" id="icon"></i>
+    </div>  
+    <div class="form-group input-group">
+    <input name="" class="form-control" placeholder="WhatsApp Number" type="text" id="phoneInput" required>
+    <i class="fa fa-phone" id="icon"></i>
+    </div> 
+    <div class="form-group input-group" id="city">
+    <input name="" class="form-control" placeholder="City" type="text" id="cityInput" required>
+    <i class="fa fa-building" id="icon"></i>
+    </div> 
+    <div class="form-group input-group" id="country">
+    <input name="" class="form-control" placeholder="Country" type="text" id="countryInput" required>
+    </div> 
+    <div class="form-group input-group">
+    <input name="" class="form-control" placeholder="Password (6 Chars Min.)" type="password" id="passwordInput"
+     pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required> <!-- add here -->
+    <i class="fa fa-lock" id="icon"></i>
+    </div>
+    <div class="form-group input-group">
+    <input name="password_two" class="form-control" placeholder="Repeat Password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required> <!-- add here -->
+    <i class="fa fa-lock" id="icon"></i>
+    </div>
+    <div class="form-group input-group">
+    <select name="" id="genderDropdown" id="genderInput" required>
+    <option id="gender" value="">Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+    <i class="fa fa-venus-mars" id="icon"></i>
+    </div> 
+    <div class="form-group input-group">
+    <input type="text" class="form-control" name="singledpick" placeholder="Birth Date" id="datepicker"> <!-- add here -->
+    <i class="fa fa-calendar-day" id="icon"></i>
+    </div> 
+    <div class="form-group input-group">
+			<input type="text" placeholder="Languages" class="form-control" value="" id="myTags" data-role="tagsinput"/>
+    <i class="fa fa-language" id="icon"></i>
+    </div> 
+    <div class="form-group input-group">
+    <textarea name="" class="form-control" id="aboutInput" placeholder="Please add a short description about yourself." type="text" id="description" rows="4"></textarea>
+    <i class="fa fa-pen" id="icon"></i>
+    </div>
+    <div class="checkbox">
+      <label id="decText"><input type="checkbox" id="declaration" value="" required>I hereby declare that I am not a tour guide or tourism business and I do not intend to use the app for business profit.
+</label> 
+  </form>
+  <div class="continueBTN">
+		<button class="btn-continue" onclick="checkSign(event)">Create Account</button>
+	</div>
+  </div>
+  </section>
+
+					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+						integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+						integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+						crossorigin="anonymous">
+					</script>
+					<script
+						src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js">
+					</script>
+
+          <!-- added for date -->
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js">
+					</script>
+          <script type="text/javascript"
+						src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+					<link rel="stylesheet" type="text/css"
+						href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+					<script type="text/javascript"
+						src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
+					<script src="js/dates/birthday_dpicker.js"></script> <!-- changed file -->
+					<script src="js/create_attractions/dynamic_duration_dropdown.js"></script>
+
+  
+  		<!-- FireBase SDK-->
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+		<!-- Add Firebase products that you want to use -->
+		<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-storage.js"></script>
+
+    <!-- form validation js -->
+    <script src="js/form_validation.js"> </script>
+
+  	<script type="module" src="js/fire/fire_signup.js"></script>
+		<script type="module">
+		import {initFirebase} from "./js/fire/fire_basics.js";
+    import {checkSign, extractUserInfo} from "./js/fire/fire_signup.js";
+
+    window.extractUserInfo = extractUserInfo;
+    
+    window.checkSign = checkSign;
+    initFirebase();
+
+	</script>
+</body>
+</html>

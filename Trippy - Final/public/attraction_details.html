@@ -1,0 +1,372 @@
+<html>
+
+<head>
+	<title>Attraction Details</title>
+	<link rel="stylesheet" href="css/attraction_details_styles.css" />
+	<link rel="stylesheet" href="css/manage.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
+	<!-- Material Design -->
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/acb6134708.js"></script>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/acb6134708.css">
+	<script src="https://kit.fontawesome.com/ae17daa307.js" crossorigin="anonymous"></script>
+
+	<!-- for heart and star -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<title>Attraction Details</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<!-- the following line is from modal-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="moudle" src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- modal lines-->
+	<link rel="stylesheet" href="css/attraction_details_stylemod.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!--Material Design-->
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/ae17daa307.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header>
+    <!--top menu bar-->
+		<div class="mdc-top-app-bar__row">
+			<button id="menu" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="openNav()">menu</button>
+			<a href="javascript:history.back()">
+				<button id="notifications" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">keyboard_backspace</button>
+			</a>
+		</div>
+	</header>
+  <!--Hamburger menu sidebar-->
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+    <img src="assets/images/profile_male.jpg" alt="Avatar" class="avatar" id="sidebarImg">
+    <br><br><br><br>
+    <h2 class="userName" id="sidebarName">Hi Guest</h2>
+    <br>
+    <a id="sidebar_myfriends" href="my_friends.html">My Friends   <i class="fas fa-users"></i></a>
+    <a href="#" onclick="logout_user()">Log Out   <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+
+	<div id="title2" class="row" style="height:300px">
+		<img id="title_image" src=""/>
+		<h4 id="title_txt"></h4>
+
+	</div>
+	<!--tabs -->
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li class="active" id="main-tab-head"><a data-toggle="tab" href="#home">Details</a></li>
+			<li id="more-tab-head"><a data-toggle="tab" href="#menu1" class="sec-tab">More Details</a></li>
+			<li id="manage-tab-head" style="display: none" ><a data-toggle="tab" href="#menu2" class="third-tab">Manage</a></li>
+		</ul>
+
+		<div class="tab-content" id="tab_content" style="display: block">
+			<div id="home" class="tab-pane fade in active">
+        <!--presents basic information about the attraction-->
+				<div class="det_headline det_start">
+					<b id="start_date_h" >Start Date:</b>
+				</div>
+				<div class="det_content">
+					<p id="start_date_c"></p>
+				</div>
+				<div class="det_headline">
+					<b id= "duration_h">Duration:</b>
+				</div>
+				<div class="det_content">
+					<p id="duration_c"></p>
+				</div>
+				<div class="det_headline">
+					<b id="leaving_from_h">Leaving From:</b>
+				</div>
+				<div class="det_content">
+					<p id="leaving_from_c"></p>
+				</div>
+				<div class="det_headline">
+					<b id="expected_expense_h">expected expense:</b>
+				</div>
+				<div class="det_content">
+					<p id="expected_expense_c"></p>
+				</div>
+				<div class="det_headline">
+					<b id="participants_h">Participants:</b>
+				</div>
+				<div class="det_content">
+					<p id="participants_c"></p>
+				</div>
+				<!-- add avatares here-->
+				<div class="participantAv" class="det_content" id="avatarsDiv">
+					<div id="insertAvatarsBefore"></div>
+				</div>
+			</div>
+			<div id="menu1" class="tab-pane fade">
+        <!--presents more details-->
+				<br>
+				<div class="det_headline">
+					<b id="description_h">Description:</b>
+				</div>
+				<div>
+					<p id="description_c"></p>
+				</div>
+				<div class="det_headline">
+					<b id="tags_h">Tags:</b>
+				</div>
+				<div>
+					<p id="tags_c"></p>
+				</div>
+				<div class="det_headline">
+					<b id="equipment_h">Equipment:</b>
+				</div>
+				<div>
+					<p id="equipment_c"></p>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+    </div>
+				<div id="menu2" class="tab-pane fade">
+					<!--manage tab-->
+					<div class="manage_tab">
+						<br>
+						<br>
+						<!-- Join Requests -->
+						<div class="join_req" id="join_requests">
+							<h4 class="join_req_title"><b id="bolded_requests_title">Join Requests: (2 Spots Left)</b>
+							</h4>
+							<center>
+								<p id="no_requests_msg" style="display: none"> Currently there aren't any requests
+									waiting</p>
+							</center>
+							<!-- first join request card-->
+							<div id="join_requests_insert_before"></div>
+						</div>
+						<br>
+						<div class="participants" id="participants_users">
+							<h4 class="particip_title"><b id="bolded_participants_title">Participants: (2 / 4)</b></h4>
+							<div id="participants_cards">
+								<!-- first participant card-->
+								<div id="participants_insert_before"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title">Your Request Was Sent To The Organizer !</h4>
+					</div>
+					<div class="modal-body">
+						<p>What Would You Like to Do Next?</p>
+					</div>
+					<div class="modal-footer">
+						<!--<div class="modf">-->
+						<button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:1px">Contact Organizer</button>
+						<a href="main_search.html">
+							<button type="button" class="btn btn-secondary" style="background-color:#413574; color:white; margin-left:1px;">Continue</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 2nd modal - contact host - whatsapp -->
+		<div class="modal fade" id="myModal2" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title">Tap to Contact Organizer On:</h4>
+					</div>
+					<div class="modal-footer">
+						<!--<div class="modf">-->
+						<button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:100px">Whatsapp</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <!-- 3rd Modal - Cancel Join Request -->
+		<div class="modal fade" id="myModal3" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title">Your Request To Join Was Canceled. A Message Was Sent To The Organizer</h4>
+					</div>
+					<div class="modal-body">
+						<p>What Would You Like to Do Next?</p>
+					</div>
+					<div class="modal-footer">
+						<!--<div class="modf">-->
+						<button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:1px">Contact Organizer</button>
+						<a href="main_search.html">
+							<button type="button" class="btn btn-secondary" style="background-color:#413574; color:white; margin-left:1px;">Continue</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <!-- 4rd Modal - Cancel Attendence -->
+		<div class="modal fade" id="myModal4" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title">Your Attendence Was Canceled. A Message Was Sent To The Organizer</h4>
+					</div>
+					<div class="modal-body">
+						<p>What Would You Like to Do Next?</p>
+					</div>
+					<div class="modal-footer">
+						<!--<div class="modf">-->
+						<button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:1px">Contact Organizer</button>
+						<a href="main_search.html">
+							<button type="button" class="btn btn-secondary" style="background-color:#413574; color:white; margin-left:1px;">Continue</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <!--modal 5 - guest modal-->
+		<div class="modal fade" id="myModalGuest" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title">Sorry, You are a guest here!</h4>
+					</div>
+					<div class="modal-body">
+						<p> wanna fix it? Be cool and sign up!</p>
+					</div>
+					<div class="modal-footer">
+						<!--<div class="modf">-->
+						<button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:1px">Close</button>
+						<a href="search_feed_2.html">
+							<button type="button" class="btn btn-secondary" style="background-color:#413574; color:white; margin-left:1px;">Sign Up</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<footer id="buttons_footer" style="display: none">
+			<div>
+				<button type="button" onclick= "addToPending()" class="BTNS" data-toggle="modal" data-target="#myModal" style="background-color:#EF603C; border-color:white" id="join_btn">I wanna Join</button>
+			</div>
+      <div>
+				<button type="button"  class="BTNS" style="background-color:#EF603C; border-color:white" id="contact_btn" data-toggle="modal" data-target="#myModal2">Contact Organizer <i class="fa fa-whatsapp"></i></button>
+			</div>
+			<div>
+				<link rel="stylesheet"
+					href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+			</div>
+		</footer>
+
+
+		<!-- FireBase SDK-->
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+		<!-- Add Firebase products that you want to use -->
+		<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-storage.js"></script>
+
+
+		<script type="module" src="js/fire/fire_basics.js"></script>
+		<script type="module" src="js/fire/fire_attraction.js"></script>
+		<script type="module" src="js/fire/fire_manage.js"></script>
+		<script type="module" src="js/cards/manage_cards.js"></script>
+		<script type="module">
+			import {initFirebase, gotoCurUserProfile, connectGuestButtonsToPopup, personalizeSideBar, logout_user} from "./js/fire/fire_basics.js";
+    import {initAttractionPage, addToPending} from "./js/fire/fire_attraction.js";
+        import {initManage} from "./js/fire/fire_manage.js";
+
+    import {self_deny_pending, self_cancel_going} from "./js/fire/fire_manage_db_update.js";
+    import {approve_request, deny_request, cancel_participant} from "./js/cards/manage_cards.js";
+    
+    window.approve_request = approve_request;
+    window.deny_request = deny_request;
+    window.cancel_participant = cancel_participant;
+    window.addToPending = addToPending;
+    window.self_deny_pending = self_deny_pending;
+    window.self_cancel_going = self_cancel_going;
+    window.connectGuestButtonsToPopup = connectGuestButtonsToPopup;
+    window.personalizeSideBar = personalizeSideBar;
+    window.logout_user = logout_user;
+    initFirebase();
+    initManage();
+    connectGuestButtonsToPopup(["contact_btn", "join_btn"]);
+    personalizeSideBar("sidebarImg", "sidebarName");
+    window.addEventListener("load", initAttractionPage());
+
+
+	</script>
+  <!--sidebar scripts-->
+  <script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+</body>
+
+</html>

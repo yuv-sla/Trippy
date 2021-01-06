@@ -1,0 +1,17 @@
+/**
+ * All required inputs initially are yellow.
+ */
+
+/**
+ * If a required input has been touched and is valid, it should be white.
+ */
+.touched:required:valid {
+  background-color: white;
+}
+
+/**
+ * If a required input has been touched and is invalid, it should be pink.
+ */
+.touched:required:invalid {
+  background-color: pink !important;
+}

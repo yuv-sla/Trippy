@@ -1,0 +1,330 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<title>Search Feed</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/feed_styles.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
+	<!-- Material Design -->
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/acb6134708.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/acb6134708.css">
+
+	<!-- for heart and star -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- the following line is from modal-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- modal lines-->
+	<link rel="stylesheet" href="css/filter_stylemod.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/ae17daa307.js" crossorigin="anonymous"></script>
+  
+</head>
+
+<body>
+	<header>
+    <!--top menu bar
+		<div class="mdc-top-app-bar__row">
+			<button id="menu" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="openNav()">menu</button>
+		</div>-->
+    
+    <header>
+    <!--top menu bar-->
+		<div class="mdc-top-app-bar__row">
+			<button id="menu" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="openNav()">menu</button>
+			<a href="javascript:history.back()">
+				<button id="notifications" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">keyboard_backspace</button>
+			</a>
+		</div>
+	</header>
+    
+	</header>
+  <!--Hamburger menu sidebar-->
+  <div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+  <img src="assets/images/profile_male.jpg" alt="Avatar" class="avatar" id="sidebarImg">
+  <br><br><br><br>
+  <h2 class="userName" id="sidebarName">Hi Guest</h2>
+  <br>
+  <a id="sidebar_myfriends" href="my_friends.html">My Friends   <i class="fas fa-users"></i></a>
+  <a href="#" onclick="logout_user()">Log Out   <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+  
+
+	<section>
+		<div class="main">
+			<div class="search_info">
+				<h3 id="search-title">Search Results</h3>
+				<h1 id="search-main" style="display: none">Torres del Paine</h1>
+				<h2 id="search-details" style="display: none">May 25 - May 30<br>1 person</h2>
+					<a href="main_search.html">
+						<button class="change_button">Change Search</button>
+					</a>
+					<div class="filterDiv">
+						<div class="filter_btn_div">
+							<button type="button" class="filter_btn" data-toggle="modal" data-target="#myModal" style="background-color:inherit; border-color:none"><u>Advanced</u></button>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="myModal" role="dialog">
+							<div class="modal-dialog" id="filter_mod">
+								<!-- Modal content-->
+								<div class="modal-content">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<div class="modal-header">
+										<h4 class="modal-title">Filter by:</h4>
+									</div>
+									<div class="modal-body">
+										<form id="myForm">
+											<p id="modal_txt">Attraction Type:</p>
+											<div class="attraction_div">
+												<input type="checkbox" class="pill_checkbox" id="cycling"/>
+												<label class="input_label" for="cycling">Cycling</label>
+												<input type="checkbox" class="pill_checkbox" id="cruising"/>
+												<label class="input_label"for="cruising">Cruising</label>
+												<input type="checkbox" class="pill_checkbox" id="extreme"/>
+												<label class="input_label"for="extreme">Extreme</label>
+												<input type="checkbox" class="pill_checkbox" id="jeep"/>
+												<label class="input_label"for="jeep">Jeep</label>
+												<input type="checkbox" class="pill_checkbox" id="kayaking"/>
+												<label class="input_label"for="kayaking">Kayaking</label>
+												<input type="checkbox" class="pill_checkbox" id="shared_ride"/>
+												<label class="input_label"for="shared_ride">Shared Ride</label>
+												<input type="checkbox" class="pill_checkbox" id="site_seeing"/>
+												<label class="input_label"for="site_seeing">Site Seeing</label>
+												<input type="checkbox" class="pill_checkbox" id="trekking"/>
+												<label class="input_label"for="trekking">Trekking</label>
+												<input type="checkbox" class="pill_checkbox" id="other"/>
+												<label class="input_label" for="other">Other</label>
+											</div>
+                      
+                        <p id="modal_txt">Distance:</p>
+                        <div class="distanceDiv">
+                            <input type="checkbox" class="checkBox" id="loc_checkbox" value="" />
+                            <label class="locLabel">Allow Trippy to check your location</label>
+
+                  <select class="selectpicker remove-example" id="radius_selector">
+                    <option value="1">1 Km</option>
+                    <option value="5">5 Km</option>
+                    <option value="10">10 Km</option>
+                    <option value="50">50 Km</option>
+                  </select>
+                  <p id="loc_holder" longitude="" latitude="" style="display: none"> </p>
+
+                  <div class="loc" latitude="32.083333" longitude="34.7999968" distance="" style="display: none"> Tel Aviv</div>
+                  <div class="loc" latitude="40.4165" longitude="-3.70256" distance="" style="display: none"> Madrid</div>
+
+											</div>
+                      <p id="modal_txt">Maximum Price:</p>
+											<div class="range-wrap">
+												<input type="range" class="range" min="0" max="1000" id="filterInput" id="max_price">
+												<output class="bubble">500</output>
+											</div>
+											<p id="modal_txt">Maximum Number of Days:</p>
+											<div class="range-wrap">
+												<input type="range" class="range" min="0" max="30" id="filterInput" id="max_days">
+												<output class="bubble">15</output>
+											</div>
+											<p id="modal_txt">Maximum Number of Participants:</p>
+											<div class="range-wrap">
+												<input type="range" class="range" min="0" max="30" id="filterInput" id="max_participants">
+												<output class="bubble">15</output>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<!--<div class="modf">-->
+										<button type="button" class="btn btn-primary" data-dismiss="modal" style="background-color:#413574; margin-right:1px" onclick="getFilteredCards()" id="closemodal">Filter</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="myFunction()"style="background-color:#413574; color:white; margin-left:1px;">Clear</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+    <h2 class="resultsNum" id="resultsNum"></h2>
+		<article>
+			<div class="card-feed" id="serach_results_feed">
+				<div id="end_feed"></div>
+			</div>
+		</article>
+	</section>
+
+    <!--guest modal-->
+  	<!-- Modal -->
+		<div class="modal fade" id="myModalGuest" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title">Sorry, You are a guest here!</h4>
+					</div>
+					<div class="modal-body">
+						<p> wanna fix it? Be cool and sign up!</p>
+					</div>
+					<div class="modal-footer">
+						<!--<div class="modf">-->
+						<button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:1px" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-secondary" style="background-color:#413574; color:white; margin-left:1px;" onclick="window.location.href='sign_up.html'">Sign Up</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+		<!-- footer symbols -->
+		<div class='btn-container'>
+			<div class="btn-bar">
+      <!--<a href="main_search.html"> -->
+				<button id="search_att_btn" class="mdc-fab" aria-label="Favorite" onclick="window.location.href='main_search.html'">
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">search</span>
+  </button>
+				<button id="profile_btn" class="mdc-fab" aria-label="Favorite"  onclick="gotoCurUserProfile()">
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">person</span>
+  </button>
+				<button id="heart_btn" class="mdc-fab" aria-label="Favorite" onclick="window.location.href='my_attractions.html'">
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">favorite</span>
+  </button>
+				<button id="add_att_btn" class="mdc-fab" aria-label="Favorite" onclick="window.location.href='create_attraction.html'"> 
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">add</span>
+  </button>
+  <!--</a> -->
+			</div>
+		</div>
+	</footer>
+
+
+
+	<script>
+		const allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(wrap => {
+  const range = wrap.querySelector(".range");
+  const bubble = wrap.querySelector(".bubble");
+
+  range.addEventListener("input", () => {
+    setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  const val = range.value;
+  const min = range.min ? range.min : 0;
+  const max = range.max ? range.max : 100;
+  const newVal = Number(((val - min) * 100) / (max - min));
+  bubble.innerHTML = val;
+
+  // Sorta magic numbers based on size of the native UI thumb
+  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+}
+	</script>
+	<script>
+		function myFunction() {
+    document.getElementById("myForm").reset();
+    const allRanges = document.querySelectorAll(".range-wrap");
+    allRanges.forEach(wrap => {
+      const range = wrap.querySelector(".range");
+      const bubble = wrap.querySelector(".bubble");
+
+    range.addEventListener("input", () => {
+    setBubble(range, bubble);
+    });
+  setBubble(range, bubble);
+});
+clearFilter();
+}
+
+$('#closemodal').click(function() {
+    $('#myModal').modal('hide');
+});
+	</script>
+
+	<!-- FireBase SDK-->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-storage.js"></script>
+
+
+	<script type="module" src="js/fire/fire_basics.js"></script>
+	<script type="module" src="js/fire/fire_search.js"></script>
+	<script type="module" src="js/utils.js"></script>
+	<script type="module" src="js/heart.js"></script>
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--<script src="https://rawgit.com/silviomoreto/bootstrap-select/master/js/bootstrap-select.js"> </script>
+    <script src="https://rawgit.com/fronteed/iCheck/1.x/icheck.js"> </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+
+    <script src="js/distance_filter/loc_filter.js"></script>
+
+	<script type="module">
+		import * as utils from './js/utils.js';
+    import {initFirebase, gotoCurUserProfile, logout_user, connectGuestButtonsToPopup, personalizeSideBar} from "./js/fire/fire_basics.js";
+    import {applyBasicSearch, update_search_headlines} from "./js/fire/fire_search.js";
+    import {changeOfHeart} from "./js/heart.js";
+    import {getFilteredCards} from "./js/fire/fire_search.js";
+    import {clearFilter} from "./js/fire/fire_search.js";
+    update_search_headlines();
+		initFirebase();
+    window.getFilteredCards = getFilteredCards;
+    window.logout_user = logout_user;
+    window.changeOfHeart = changeOfHeart;
+    window.gotoCurUserProfile = gotoCurUserProfile;
+    window.addEventListener("load", applyBasicSearch());
+    window.clearFilter = clearFilter;
+    window.personalizeSideBar = personalizeSideBar;
+    personalizeSideBar("sidebarImg", "sidebarName");
+    connectGuestButtonsToPopup(["add_att_btn", "heart_btn", "profile_btn"]);
+	</script>
+  <!--sidebar scripts-->
+  <script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+
+</body>
+
+</html>

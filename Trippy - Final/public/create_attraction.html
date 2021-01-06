@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- added for progress bar and first two fields-->
+	<link rel="stylesheet" href="https://mdbootstrap.com/snippets/styles.7433824a9cbda6a70303.css">
+	<link rel="stylesheet" href="css/create_att_styles.css" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://bootstrapformhelpers.com/assets/css/bootstrap-formhelpers.min.css">
+
+	<!--Material Design-->
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!--Tags-->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+	<link rel="stylesheet" href="css/tag.css" />
+  
+  <!--Form Validation -->
+  <link rel="stylesheet" href="css/form_validation.css" />
+
+	<!-- modal lines-->
+	<link rel="stylesheet" href="css/stylemod.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<!--to add icons-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/acb6134708.css">
+
+
+	<title>Add Attraction - Details</title>
+</head>
+
+<body id="bodySection">
+	<header>
+    <!--top bar menu-->
+		<div id="header" id="rowPage1">
+			<div class="mdc-top-app-bar__row">
+				<button id="menu" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="openNav()">menu</button>
+        				<a href="javascript:history.back()" id="backBtn">
+					<button id="notifications" id="back1" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">keyboard_backspace</button>
+          </a>
+			</div>
+		</div>
+	</header>
+  <!--Hamburger menu sidebar-->
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+    <img src="assets/images/profile_male.jpg" alt="Avatar" class="avatar" id="sidebarImg">
+    <br><br><br><br>
+    <h2 class="userName" id="sidebarName">Hi Guest</h2>
+    <br>
+    <a id="sidebar_myfriends" href="my_friends.html">My Friends   <i class="fas fa-users"></i></a>
+    <a href="#" onclick="logout_user()">Log Out   <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+  <!--create attraction form is composed of 3 pages placed one on top of another and shown or hidden using JS-->
+	<div class="page3" id="page_3">
+    <!--summary page-->
+		<div class="pageContent">
+			<div class="all-container">
+				<div class="steps-form">
+					<div class="steps-row setup-panel">
+						<div class="steps-step">
+							<a href="#step-9" type="button" class="btn" id="btn-3"
+								disabled="disabled"><i class="fa fa-info" aria-hidden="true"></i></a>
+							<p class="steps-titles">Details</p>
+						</div>
+						<div class="steps-step">
+							<a href="#step-10" type="button" class="btn" id="btn-2"
+								disabled="disabled"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+							<p class="steps-titles">Custumize</p>
+						</div>
+						<div class="steps-step">
+							<a href="#step-11" type="button" class="btn"
+								id="btn-1"><i class="fa fa-binoculars" aria-hidden="true"></i></a>
+							<p class="steps-titles">Review</p>
+						</div>
+					</div>
+				</div>
+				<article id="content3">
+					<div class="fs" id="allDiv">
+            <div class="row">
+							<div class="col-5">
+								<b>Attraction Name:</b>
+							</div>
+							<div class="col-7">
+								<p id="att_name">Jerusalem</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-5">
+								<b>Start Date:</b>
+							</div>
+							<div class="col-7">
+								<p id="start_date">July 5 2020</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-5">
+								<b>Duration:</b>
+							</div>
+							<div class="col-7">
+								<p id="duration">3 days</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-5">
+								<b>Leaving From:</b>
+							</div>
+							<div class="col-7">
+								<p id="leaving_from">Puerto Natales, Chile</p>
+							</div>
+						</div>
+
+            <div class="row">
+							<div class="col-5">
+								<b>Number of Participants:</b>
+							</div>
+							<div class="col-7">
+								<p id="participants">3</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-5">
+								<b>Expected Expense:</b>
+							</div>
+							<div class="col-7">
+								<p id="cost">150€</p>
+							</div>
+						</div>
+
+            <div class="row">
+							<div class="col-5">
+								<b>Attraction Type:</b>
+							</div>
+							<div class="col-7">
+								<p id="att_type">Extreme</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-5">
+								<b>Description:</b>
+							</div>
+							<div class="col-7">
+								<p id="description">a national park encompassing mountains, glaciers, lakes, and rivers
+									in southern Chilean Patagonia.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-5">
+								<b>Tags:</b>
+							</div>
+							<div class="col-7">
+								<p id="tags">Hiking, Sun, Water, Glacier</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-5">
+								<b>Equipment:</b>
+							</div>
+							<div class="col-7">
+								<p id="equipment">Water, food, good hiking shoes</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-5">
+							</div>
+							<div class="container">
+								<!-- Trigger the modal with a button -->
+								<div class="modalbuttom">
+                  <!---->
+
+									<button type="button" onclick="initCreateAttPage()" class="btn-continue" data-toggle="modal" data-target="#myModal" id="done_btn">Done</button></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+	
+  <div class="page2" id="page_2">
+    <!--add further details-->
+		<div class="pageContent">
+			<div class="all-container">
+				<div class="steps-form">
+					<div class="steps-row setup-panel">
+						<div class="steps-step">
+							<a href="#step-9" type="button" class="btn" id="btn-2"
+								disabled="disabled"><i class="fa fa-info" aria-hidden="true"></i></a>
+							<p class="steps-titles">Details</p>
+						</div>
+						<div class="steps-step">
+							<a href="#step-10" type="button" class="btn" id="btn-1">
+								<i class="fa fa-pencil-square-o" aria-hidden="true" id="pencil"></i></a>
+							<p class="steps-titles">Custumize</p>
+						</div>
+						<div class="steps-step">
+							<a href="#step-11" type="button" class="btn" id="btn-3"
+								disabled="disabled"><i class="fa fa-binoculars" aria-hidden="true" id="binoculars"></i></a>
+							<p class="steps-titles">Review</p>
+						</div>
+					</div>
+				</div>
+				<article>
+          <form class="needs-validation" id="form2">
+					<div class="allFields">
+						<div class="attractionType">
+							<label for="sel2" id="fieldLabel">Attraction Type</label>
+							<div class="dropdownvertical-center">
+								<div class="form-group">
+									<select class="form-control" id="sel2" required>
+              <option></option>
+              <option>Cycling</option>
+              <option>Cruising </option>
+              <option>Extreme</option>
+              <option>Jeep</option>
+              <option>Kayaking</option>
+              <option>Shared Ride</option>
+              <option>Site Seeing</option>
+              <option>Trekking</option>
+              <option>Other</option>
+            </select>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="exampleFormControlTextarea3" id="fieldLabel">Description</label>
+							<textarea class="form-control" id="exampleFormControlTextarea3" rows="4"></textarea>
+						</div>
+
+						<div class="tagsDiv">
+							<label for="myTags" id="fieldLabel">Tags</label>
+							<div class="tagsContainer" id="tagsContainer">
+								<input type="text" value="" id="myTags" data-role="tagsinput" />
+                </div>
+							</div>
+
+            <div class="equipmentDiv">
+              <form>
+                <div class="custom-control custom-control-right custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="customSwitches" onclick="equipmentSwitcher()">
+                  <label class="custom-control-label" for="customSwitches" id="fieldLabel">Equipment</label>
+                </div>
+              </form>
+            </div>
+
+							<div class="Main" id="switchText" style="display:none;">
+								<div class="tagsInput">
+									<input type="text" value="" id="ti" data-role="tagsinput" style="border-radius:10px;">
+							</div>
+						</div>
+          </div>
+        </form>
+        <div class="continueBTN">
+					<button class="btn-continue" onclick="hidePage2(event)" id="continue_to_rev">Continue  <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+				</div>
+				</article>
+			</div>
+		</div>
+  </div>
+
+  <div class="page1" id="page_1">
+    <!--add basic information about the attraction-->
+    <div class="pageContent">
+      <div class="all-container">
+        <div class="steps-form">
+          <div class="steps-row setup-panel">
+            <div class="steps-step">
+              <a href="#step-9" type="button" class="btn"
+                id="btn-1"><i class="fa fa-info" aria-hidden="true"></i></a>
+              <p class="steps-titles">Details</p>
+            </div>
+            <div class="steps-step">
+              <a href="#step-10" type="button" class="btn" id="btn-2"
+                disabled="disabled"><i class="fa fa-pencil-square-o" aria-hidden="true" id="pencil"></i></a>
+              <p class="steps-titles">Customize</p>
+            </div>
+            <div class="steps-step">
+              <a href="#step-11" type="button" class="btn" id="btn-3"
+                disabled="disabled"><i class="fa fa-binoculars" aria-hidden="true" id="binoculars"></i></a>
+              <p class="steps-titles">Review</p>
+            </div>
+          </div>
+        </div>
+
+        <article>
+          <form class="needs-validation" id="form1">
+          <div class="allFields">
+            <div class=="attractionDiv">
+              <label for="AttractionName" id="fieldLabel">Attraction Name</label>
+              <input type="text" class="form-control" id="AttractionName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid Attraction Name is required.
+              </div>
+            </div>
+
+            <div class="dateDiv">
+              <label for="frmSaveOffice_startdt" id="fieldLabel">Starts on</label>
+              <div class="form-group required">
+                <div class="input-group datepick" name="singledpickdiv">
+                  <div autocomplete="autocomplete_off_hack_xfr4" method="post" action="">
+                    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                    <input class="dateInput form-control" type="text" name="singledpick" id="frmSaveOffice_startdt" autocomplete="off"
+                           required pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])\/(0[1-9]|1[012])\/[0-9]{4}">
+                  </div>
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="durationSetup">
+                  <div class="durationContainer">
+                    <label for="sel1" id="fieldLabel">Duration</label>
+                    <div class="durationDiv">
+                      <div class="dropdownvertical-center">
+                        <div class="form-group">
+                          <select class="form-control" id="sel1" onchange="durationDropdownHandler()" required>
+          <option></option>
+          <option>Few Hours</option>
+          <option>Half A Day</option>
+          <option>Day/s</option>
+        </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="number-input md-number-input" id="ctr1"
+                      style="display:none;">
+                      <button class="minus" onclick="durationStepDown(event)"></button>
+                      <input class="quantity" min="0" name="quantity" value="1" type="number" id="dur_num">
+                      <<button class="plus" onclick="durationStepUp(event)"></button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="locationDiv">
+                <label for="placesInput" id="fieldLabel">Leaving From</label>
+                <input type="text" class="form-control" id="Leaving_from" placeholder="" value="" id="searchTextField" id="placesInput" required>
+              </div>
+                <div id= "longitude" style="display:none">
+                </div>
+                <div id= "latitude" style="display:none">
+                </div>
+                <div class="participantsDIv">
+                  <div class="participants-title">
+                    <label id="fieldLabel">Total Amount Of Participants</label></div>
+                  <div class="number-input md-number-input" id="participantsUpDown">
+                      <button class="minus" onclick="participantsStepDown(event)"></button>
+                    <input class="quantity" min="2" name="quantity" value="2" type="number" id="part_num" required>
+                    <button class="plus" onclick="participantsStepUp(event)"></button>
+                  </div>
+                </div>
+              
+
+              <div class="priceDiv">
+                <label for="priceNumber" id="fieldLabel">Expected Expense</label>
+                <div class="price">
+                  <input type="number" id="priceNumber"><h3 id="usd">$ - USD</h3>
+</div>
+                </div>
+              </div>
+          </form>
+              <div class="continueBTN">
+                <button class="btn-continue" onclick="hidePage1(event)">Continue  <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            
+    </div>
+        </article>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-header">
+
+          <h4 class="modal-title">Great Job!
+            <br> Your Event Was Created &nbsp;&nbsp;&nbsp;<i class="fa fa-check-circle-o fa-2x" aria-hidden="true" style="color: #27E9AF"></i>
+          </h4>
+        </div>
+        <div class="modal-body">
+          <p>lets find more fun attractions for you!</p>
+        </div>
+        <div class="modal-footer">
+          <a href="main_search.html">
+            <button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:6px">Let's Go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+              import {initCreateAttPage} from "./js/fire/fire_create_att.js";
+              window.initCreateAttPage = initCreateAttPage;
+  </script>
+
+  <script>
+    function hidePage1(event) {
+      event.preventDefault();
+      var form = document.getElementById("form1");
+      if (form.reportValidity() === false)
+      {
+        console.log("not valid");
+        form.setAttribute("class", "needs-validation");
+        //form.reportValidity();
+        //alert("Error, please fill all required fields correctly before submitting.");
+        //event.currentTarget.submit()
+        // maybe change class of form object
+      }
+      else
+      {
+        console.log("is valid");
+        form.setAttribute("class", "validated");
+
+      // maybe change class of form object
+    
+        var page1 = document.getElementById("page_1");
+        var page2 = document.getElementById("page_2");
+        var page3 = document.getElementById("page_3");
+        var back = document.getElementById("backBtn");
+        {
+          page1.style.display = "none";
+          page2.style.display = "block";
+          page3.style.display = "none";
+          back.href = "javascript:showPage1()"
+        }
+      }
+    }
+  </script>
+
+  <script>
+    function hidePage2(event) {
+      event.preventDefault();
+      var form = document.getElementById("form2");
+      if (form.reportValidity() === false)
+      {
+        console.log("not valid");
+        form.setAttribute("class", "needs-validation");
+        //form.reportValidity();
+        //alert("Error, please fill all required fields correctly before submitting.");
+
+        //event.currentTarget.submit();
+        // maybe change class of form object
+      }
+      else
+      {
+        console.log("is valid");
+        form.setAttribute("class", "validated");
+        // maybe change class of form object
+
+        update_review_section();
+        var page2 = document.getElementById("page_2");
+        var page3 = document.getElementById("page_3");
+        var back = document.getElementById("backBtn");
+        {
+          page2.style.display = "none";
+          page3.style.display = "block";
+          back.href = "javascript:showPage2()";
+        }
+      }
+    }
+  </script>
+  <script>
+    function showPage1() {
+  var page1 = document.getElementById("page_1");
+  var page2 = document.getElementById("page_2");
+  var page3 = document.getElementById("page_3");
+  var back = document.getElementById("backBtn");
+  {
+  page1.style.display = "block";
+  
+  back.href = "search_feed.html"
+  }
+  }
+  </script>
+  
+  <script>
+    function showPage2() {
+    var page1 = document.getElementById("page_1");
+    var page3 = document.getElementById("page_3");
+    var page2 = document.getElementById("page_2");
+    var back = document.getElementById("backBtn");
+    {
+      page1.style.display = "none";
+      page2.style.display = "block";
+      page3.style.display = "none";
+      back.href = "javascript:showPage1()"
+    }
+  }
+  </script>
+
+
+
+					<!-- Optional JavaScript for page 1-->
+					<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+						integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+						integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+						integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+						crossorigin="anonymous">
+					</script>
+					<link rel="stylesheet"
+						href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+						integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+						crossorigin="anonymous">
+
+					<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+					<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js">
+					</script>
+					<script type="text/javascript"
+						src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+					<link rel="stylesheet" type="text/css"
+						href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+					<script type="text/javascript"
+						src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+					<link rel="stylesheet" type="text/css"
+						href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+					<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen"
+						rel="stylesheet" type="text/css">
+
+					<script src="js/dates/single_dpicker.js"></script>
+          <script src="js/create_attractions/dynamic_duration_dropdown.js"></script>
+
+
+					<!-- Optional JavaScript for page 2-->
+					<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+					<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+						integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+						integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+						crossorigin="anonymous">
+					</script>
+					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+						integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+						crossorigin="anonymous">
+					</script>
+					<script
+						src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js">
+					</script>
+					<script src="js/create_attractions/attraction_customize.js"></script>
+
+					<!-- FireBase SDK-->
+					<!-- The core Firebase JS SDK is always required and must be listed first -->
+					<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+					<!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+					<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+					<!-- Add Firebase products that you want to use -->
+					<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+					<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+					<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+					<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+					<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-storage.js"></script>
+
+					<script type="module" src="js/fire/fire_create_att.js"></script>
+					<script type="module" src="js/utils.js"></script>
+
+					<!-- google places API -->
+					<script type="module" src="js/create_attractions/places.js"></script>
+
+          <!-- form validation js -->
+            <script src="js/form_validation.js"> </script>
+          
+          <script src="js/create_attractions/spinner_inc_dec.js"> </script>
+
+					<script type="module">
+						import {initCreateAttPage, initFirebase, update_review_section} from "./js/fire/fire_create_att.js";
+            import {personalizeSideBar, logout_user} from "./js/fire/fire_basics.js";
+            import {initAutocomplete} from "./js/create_attractions/places.js";
+            window.initAutocomplete = initAutocomplete;
+            window.initCreateAttPage = initCreateAttPage;
+            window.personalizeSideBar = personalizeSideBar;
+            window.logout_user = logout_user;
+            window.update_review_section = update_review_section;
+            window.onload = initAutocomplete();
+		        initFirebase();
+            personalizeSideBar("sidebarImg", "sidebarName");
+            
+
+	        </script>
+          
+          <script
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzm7wb6iwLgqaMj5fd6D5vqI35wWaVcWo&libraries=places"
+						async defer></script>
+            <!--sidebar scripts-->
+  <script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.container-fluid{
+position: absolute;
+height: 260px;
+top: -84px;
+z-index: -1;
+background-color: #413574;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+}
+
+#notifications {
+  left: 0px;
+  font-size: 36px;
+  z-index: 2;
+  top: 0px;
+}
+
+body {
+  
+  /*background-color: #E5E5E5;*/
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  
+}
+#notifications:focus {
+  left: 0px;
+  font-size: 36px;
+  background-color: transparent !important;
+}
+
+#box_pro_pic{
+  box-shadow: 0px 4px 8px rgba(50, 50, 71, 0.06), 0px 4px 4px rgba(50, 50, 71, 0.08);
+}
+.avatar
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+  width: 50%;
+  height: 55%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #FFFFFF;
+  max-width: 150px;
+}
+
+/*fav experiences*/
+.top_exp{
+font-weight: bold;
+font-size: 35px;
+text-align: center;
+-webkit-text-fill-color: #FF9C64;
+padding-top: 10px;
+}
+
+.top_exp_box{
+position: center;
+width: 100%;
+height: 300px;
+border-radius: 10px;
+}
+  
+.carousel-item
+{
+  max-width: 564px;
+  max-height: 460px;
+}
+
+.carousel-inner{
+object-fit:cover;
+}
+.carousel-control-prev
+{
+  position: relative;
+}
+.d-block.w-100{
+  max-width: 564px !important;
+  max-height: 250px !important;
+  object-fit: cover;
+}
+/*
+#carouselExampleCaptions
+{
+  position: absolute;
+  top:1100px;
+  right: 17%;
+  left: 22%;
+}*/
+
+
+/* bottom bar buttons */
+.material-icons.mdc-top-app-bar__navigation-icon.mdc-icon-button {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  color: #F2F2F2
+}
+.btn-bar {
+  position: fixed;
+  left: 0%;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+.mdc-fab__ripple {
+  background: linear-gradient(180deg, #EF603C 0%, #FF9C64 100%)
+}
+.mdc-fab {
+  background: linear-gradient(180deg, #EF603C 0%, #FF9C64 100%);
+  padding: 25%;
+  width: 100%;
+  position: fixed;
+  
+}
+
+/*for profile not in view mode
+#person{
+  border: 4px solid #FFFFFF;
+}
+*/
+
+footer {
+  left: 0%;
+  bottom: 0;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+    margin-bottom: 60px;
+    max-width: 350px;
+}
+
+.carousel-inner {
+    height: 100%;
+    display: inline-block;
+    box-align: center
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.carousel-indicators {
+  bottom: 10px;
+  position: fixed
+}
+#carouselExampleCaptions {
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+}
+
+header {
+  background-color: #413574;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.mdc-top-app-bar__row {
+  background-color: #413574;
+  position: fixed;
+  top: 0;
+}
+
+footer{
+  position: fixed;
+  padding-top: 3px;
+  left: 43%;
+  bottom: 20px;
+  z-index: 3
+}
+
+/* Whatsapp Symbol Propeties */
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:10px;
+	/* right:40px; */
+	background-color:#25d366;
+	color:#FFF !important;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+.float_friends{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:10px;
+	/* right:40px; */
+	background: linear-gradient(180deg, #EF603C 0%, #FF9C64 100%);
+	color:#FFF !important;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+.fa.fa-users{
+  padding-top: 15px !important;
+}
+.my-float{
+	margin-top:16px;
+}
+

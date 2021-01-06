@@ -1,0 +1,89 @@
+body {
+  background-image: url("https://cdn.dribbble.com/users/1846841/screenshots/5200239/yosemite1.jpg");
+  background-color: #cccccc;
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+}
+
+section {
+  width: 100%;
+  top: 20%;
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+}
+ #title_txt_fp {
+   font-size: 44px;
+   color: white;
+   width: 375px;
+   height: 100px;
+   text-align: center !important;
+   font-weight: bold;
+   margin: auto;
+ }
+ button.btn-continue {
+  background: #EF603C;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  color: #F2F2F2;
+  padding: 10px;
+  font-size: 20px;
+  width:100%;
+  box-align: center;
+}
+.allElements {
+  width: 90%;
+  margin: auto;
+}
+.usernameDiv,
+.PasswordDiv {
+  display: inline-block;
+  width: 100%;
+  margin: 0px auto;
+  font-size: 18px;
+  background-color: #F2F2F2;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#UserName,
+#Password {
+  font-size: 18px;
+  padding-left: 10px;
+  width: 90%;
+  margin: auto;
+}
+#no_account {
+  font-size: 20px;
+  color: #F2F2F2
+}
+
+button:focus{
+  background-color:#EF603C !important;
+}
+
+#google_div{
+  position: absolute;
+  left: 33px;
+  top: 340px;
+}
+#sign_as_guest{
+  background-color: burlywood;
+}
+.incorrectMsg{
+  font-size: 18px;
+  background-color: rgb(172, 20, 20);
+  color: #F2F2F2;
+  border-radius: 20px;
+}

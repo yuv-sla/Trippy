@@ -1,0 +1,415 @@
+body {
+  background: white;
+  font-family: Arial;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+}
+#loading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+}
+#components {
+  display: none
+}
+.header {
+  background: #01A1FD;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.header >.title {
+  color: white;
+  font-size: 20px;
+}
+.content {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  min-height: calc(100% - 60px - 40px);
+}
+.content >.block {
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+  background: #9BB3C2;
+  border-radius: 4px;
+}
+footer {
+  position: fixed; 
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+.tab-content{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  position: absolute;
+  text-align: center; 
+  width: 100% !important;
+  /**color: white;*/
+}
+
+#title_txt {
+  position: absolute;
+  bottom: 8px;
+  color: white;
+  transition: none 0s ease 0s; 
+  cursor: move; 
+  top: -94px;
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bolder;
+  -webkit-text-stroke: 0.5px #4f4f4f;
+}
+
+
+#title_image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  left: 0px;
+  top: -19px;
+
+  /**background: url(mountains.png);*/
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 40px 40px;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#button1 {
+position: absolute;
+width: 80%;
+background: #EF603C;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 27px;
+text-align: center;
+color: white
+
+}
+
+#button2 {
+position: absolute;
+width: 300px;
+height: 50px;
+left: 40px;
+top: 650px;
+
+background: #EF603C;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 27px;
+text-align: center;
+color: white
+}
+
+.categ {
+  width: 250; 
+  padding-top: 0px;
+  font-weight: bolder;
+  font-size: 18px;
+  line-height: 20px;
+  color: black
+}
+
+.cont {
+    width: 250; 
+    padding-top: 0px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: black
+}
+#body_fp {
+background-image: url("https://cdn.dribbble.com/users/1846841/screenshots/5200239/yosemite1.jpg");
+background-color: #cccccc;
+}
+#title_fp {
+  height:600px;
+  align-content: center;
+}
+ #title_txt_fp {
+   font-size: 44px;
+   color: white;
+   text-align: center;
+   font-weight: bold;
+ }
+
+.usernameDiv {
+  display: inline-block;
+  width: 80%;
+  margin: 0px auto;
+  font-size: 18px;
+}
+
+#username_fp{
+  font-size: 18px;
+  color: #F2F2F2;
+  font-weight: bold;
+  text-indent: 90px;
+  margin-top:10px;
+  margin-bottom: 0px;
+
+}
+
+.PasswordDiv{
+  position: absolute;
+  display: inline-block;
+  width: 80%;
+  margin: 100px;
+  margin-right: 100px;
+  font-size: 18px;
+}
+
+#password_fp {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  text-indent: 90px;
+  margin-top:10px;
+  margin-bottom: 0px;
+
+}
+
+
+#middle_fp{
+  display: inline-block;
+  height: 10px;
+}
+middle_fp2{
+  text-align: center;
+  margin-top:100px;
+
+}
+
+#button1_fc {
+  position: absolute;
+  right: 87.5px;
+  top: 60.47%;
+  background: #EF603C;
+  border-radius: 12px;
+  width: 200px;
+  height: 50px;
+  font-size: 26px;
+}
+
+#sec_title_fp{
+  position: absolute;
+  right: 60px;
+  top: 70.47%;
+  align-content: right;
+}
+#sec_t_fp {
+   font-size: 20px;
+   color: white;
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bolder;
+}
+
+#bottom_button{
+  position: absolute;
+  right: 60px;
+  top: 80.47%;
+  align-content: right;
+}
+  
+#button2_fp{
+position: absolute;
+  right: 22px;
+  top: 60.47%;
+  background: #EF603C;
+  border-radius: 12px;
+  width: 200px;
+  height: 50px;
+  font-size: 26px;
+
+
+}
+#both {
+  position: absolute;
+  right: 130px;
+  bottom: 290px;}
+
+.col-7{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.col-5{
+  padding-left: 20px;
+  padding-right: 0px;
+}
+#allDiv {
+  padding-bottom: 80px;
+}
+.btns {
+  background: #EF603C;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  border: none;
+  color:  #F2F2F2;
+  margin: 5px;
+  padding: 10px;
+  font-size: 18;
+  width: 80%;
+  display: inline-block;
+}
+.avatar {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 1;
+  margin-left: 5px;
+  border: 4px solid #EF603C;
+}
+.participantAv {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+.hostAvatar {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 1;
+  margin-left: 5px;
+  border: 4px solid #413574;
+}
+header {
+  background: none;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  z-index: 2
+}
+
+.mdc-top-app-bar__row {
+  background-color: none;
+  position: fixed;
+  top: 0;
+}
+.material-icons.mdc-top-app-bar__navigation-icon.mdc-icon-button {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  color: #F2F2F2
+}
+#menu {
+  right: 0px;
+  font-size: 36px;
+}
+#notifications {
+  left: 0px;
+  font-size: 36px;
+}
+#notifications:focus {
+  background-color: transparent !important;
+}
+#menu:focus {
+  background-color: transparent !important;
+}
+/* Whatsapp Symbol Propeties */
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:10px;
+	left:155px;
+	background-color:#25d366;
+	color:#FFF !important;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+/* sidebar */
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 20;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(180deg, #413574 0%, #251D49 100%);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #F2F2F2;
+  display: block;
+  transition: 0.3s;
+  
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+#sidebarImg{
+  vertical-align: middle;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  right: 60px;
+  margin-left: 70px;
+  border: 4px solid #F2F2F2;
+  object-fit: cover;
+}
+.userName{
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+}
+

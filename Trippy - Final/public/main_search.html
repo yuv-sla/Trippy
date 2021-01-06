@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!-- English is used as working language-->
+<html lang="en">
+
+<head>
+	<!--"teaches" the browser the character set used in the page-->
+	<meta charset="utf-8">
+	<!-- Meta tag that goes by the "mobile first" philosophy - helpful!-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!--title of page-->
+	<title>Attraction Search Engine</title>
+	<!--connects the tab favicon with the given favicon-->
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<!-- self made styles -->
+	<link rel="stylesheet" href="css/main_search.css" />
+  <link rel="stylesheet" href="css/notifications.css">
+
+	<!--Additional stylesheet directing to Bootstrap. Unknown if will create conflict with module stylesheet-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+
+
+	<!--connects the page with jquery JS library-->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!--connects page to Cloudflare-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
+	<!--connects page to CSS materials from Bootstrap-->
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<!--connects page to JS materials from Bootstrap-->
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+	<!--connects page to material icons of Google Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!--path for the JS code document of the app-->
+	<!--<script src="js/dates/app.js"></script>-->
+  <!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/ae17daa307.js" crossorigin="anonymous"></script>
+  <!--trippy font-->
+  <link href='https://fonts.googleapis.com/css?family=Caveat Brush' rel='stylesheet'>
+  <!-- the following line is from modal-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<!-- modal lines-->
+	<link rel="stylesheet" href="css/attraction_details_stylemod.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	</div>
+	<!--Optional JS for the components of Bootstrap-->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+	</script>
+
+	<!-- Second Bootstrap CSS for calendar -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen" rel="stylesheet"
+		type="text/css">
+
+<!-- hamburger menu and notification -->
+	<header>
+		<div class="mdc-top-app-bar__row">
+			<button id="menu" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="openNav()">menu</button>
+    <div>
+        <ul>
+            <li id="noti_Container">
+                <div id="noti_Counter"></div>   <!--SHOW NOTIFICATIONS COUNT.-->
+                
+                <!--A CIRCLE LIKE BUTTON TO DISPLAY NOTIFICATION DROPDOWN.-->
+                	<!--<div class="mdc-top-app-bar__row">-->
+			              <div id="noti_Button" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">notifications_none</div>
+                <!--</div>-->
+                <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+                <div id="notifications" deleted="">
+                    <h3 id="noti_title">Notifications</h3>
+                    <!--<div class="sep_line"></div>-->
+                    <hr>
+                    <div id="noti_box" style="overflow-y: scroll; height:300px;">
+                      <!--<div class="notification"><a class="name_person_noti"><u>Ron Cohen</u></a> approved you request to join <a class="name_att_noti"><u>"Torres del Paine"</u></a></div>
+                      <div class="sep_line"></div> -->
+                    <div id="notifications_insert_before"> </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+		</div>
+	</header>
+  <!--Hamburger menu sidebar-->
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+    <img src="assets/images/profile_male.jpg" alt="Avatar" class="avatar" id="sidebarImg">
+    <br><br><br><br>
+    <h2 class="userName" id="sidebarName">Hi Guest</h2>
+    <br>
+    <a id="sidebar_myfriends" href="my_friends.html">My Friends   <i class="fas fa-users"></i></a>
+    <a href="#" onclick="logout_user()">Log Out   <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+
+	<!-- body of page -->
+	<section>
+		<div class="top_side" id="top_side">
+			<div class="allFields">
+				<div class="center">
+					<h1 id="heading">Where Do You Wish To Go Next?</h1>
+				</div>
+				<div class=="attractionDiv">
+				<center>
+						<input type="text" class="form-control" id="AttractionName" placeholder="Attraction, Location, Tag, Type" value="" required="">
+      </center>
+						<div class="invalid-feedback">
+							Valid Attraction Name is required.
+						</div>
+				</div>
+
+				<!-- date and num of people -->
+				<div class="datePeopleDiv">
+					<div class="dateDiv">
+						<label id="fieldLabel">Start Date</label>
+						<div autocomplete="autocomplete_off_hack_xfr4" method="post" action="">
+                  <input autocomplete="false" name="hidden" type="text" style="display:none;">
+
+
+							<input class="dateInput" type="text" id="datesrange" name="from" placeholder="Pick a range of possible start dates" autocomplete="off" style="font-size: 14px">
+            </div>
+						</div>
+						<div class="participantsDiv">
+							<div class="participants-title">
+								<label id="fieldLabel">Participants</label>
+							</div>
+							<div class="number-input md-number-input" id="participantsUpDown2">
+								<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+								<input class="quantity" min="1" id="neededspots" name="quantity" value="1" type="number">
+								<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+							</div>
+						</div>
+					</div>
+
+					<div class="container">
+						<center>
+							<div class="search_button_div">
+                <!-- add on click for the button-->
+								<button class="change_button" onclick="goToSearchResults()">Search</button>
+							</div>
+						</center>
+					</div>
+
+					<!-- advanced search -->
+				</div>
+				<script src="js/dates/range_date_picker.js"></script>
+			</div>
+      <article>
+        <div id="upcoming_attractions" style="display: none">
+          <h2 id="suggest"><u id="upcoming_title">Upcoming Attractions</u></h2>
+          <div class="scrolling-wrapper" id="upcoming_feed">
+            <div id="upcoming_insert_before"></div>
+            <div class="moreDiv" id="upcoming_more">
+              <h2 class="see_more">See More <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div id="last_search_attractions" style="display: none">
+          <h2 id="suggest"><u id="last_search_title">Last Search:</u></h2>
+          <div class="scrolling-wrapper" id="last_search_feed">
+            <div id="last_search_insert_before"></div>
+            <div class="moreDiv" id="last_search_more">
+              <h2 class="see_more">See More <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </article>
+	</section>
+
+
+  <!--guest modal-->
+  	<!-- Modal -->
+		<div class="modal fade" id="myModalGuest" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-header">
+
+						<h4 class="modal-title">Sorry, You are a guest here!</h4>
+					</div>
+					<div class="modal-body">
+						<p> wanna fix it? Be cool and sign up!</p>
+					</div>
+					<div class="modal-footer">
+						<!--<div class="modf">-->
+						<button type="button" class="btn btn-primary" style="background-color:#413574; margin-right:1px" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-secondary" style="background-color:#413574; color:white; margin-left:1px;" onclick="window.location.href='sign_up.html'">Sign Up</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+
+	<footer>
+		<!-- footer symbols -->
+		<div class='btn-container'>
+			<div class="btn-bar">
+      <!--<a href="main_search.html"> -->
+				<button id="search_att_btn" class="mdc-fab" aria-label="Favorite" onclick="window.location.href='main_search.html'">
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">search</span>
+  </button>
+  <!--</a>-->
+				<button id="profile_btn" class="mdc-fab" aria-label="Favorite"  onclick="gotoCurUserProfile()">
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">person</span>
+  </button>
+  <!--<a href="my_attractions.html"> -->
+				<button id="heart_btn" class="mdc-fab" aria-label="Favorite" onclick="window.location.href='my_attractions.html'">
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">favorite</span>
+  </button>
+ 				<button id="add_att_btn" class="mdc-fab" aria-label="Favorite" onclick="window.location.href='create_attraction.html'"> 
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">add</span>
+  </button>
+ 			</div>
+		</div>
+	</footer>
+
+  <!--notofications script-->
+  <script>
+    $(document).ready(function () {
+              $('#noti_Button').click(function () {
+            console.log(document.getElementById("notifications").getAttribute("style"));
+            // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+            $('#notifications').fadeToggle('fast', 'linear', function () {
+                console.log(document.getElementById("notifications").getAttribute("style"));
+                if ($('#notifications').is(':hidden')) {
+                    console.log("ishidden");
+                    $('#noti_Button').css('background-color', '#ffffff00');
+                }
+                // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                else
+                {
+                  $('#noti_Button').css('background-color', '#ffffff00');
+                  actPresented();
+                }
+            });
+
+            $('#noti_Counter').fadeOut('slow');     // HIDE THE COUNTER.
+
+            return false;
+        });
+
+    // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+    $(document).click(function () {
+        $('#notifications').hide();
+
+        // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+        if ($('#noti_Counter').is(':hidden')) {
+            // CHANGE BACKGROUND COLOR OF THE BUTTON.
+            $('#noti_Button').css('background-color', '#ffffff00');
+        }
+    });
+
+    $('#notifications').click(function () {
+        return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+      });
+
+    
+
+
+    });
+    </script>
+  	<!-- FireBase SDK-->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-storage.js"></script>
+    <!--for the notifications-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+
+	<script type="module" src="js/fire/fire_basics.js"></script>
+  <script type="module" src="js/fire/fire_search.js"></script>
+  <script type="module" src="js/fire/fire_suggestions.js"></script>
+  <script type="module" src = "js/notifications/notifications_presentor.js"></script>
+	<script type="module">
+    import {initFirebase, gotoCurUserProfile, isGuestUser, logout_user, personalizeSideBar, connectGuestButtonsToPopup} from "./js/fire/fire_basics.js";
+    import {goToSearchResults} from "./js/fire/fire_search.js";
+    import {initSuggestions} from "./js/fire/fire_suggestions.js";
+    import {initNotificationShower, presentNotifications, actPresented} from "./js/notifications/notifications_presentor.js";
+    window.goToSearchResults = goToSearchResults;
+    window.gotoCurUserProfile = gotoCurUserProfile;
+    window.logout_user = logout_user;
+    window.actPresented = actPresented;
+    window.presentNotifications = presentNotifications;
+    window.personalizeSideBar = personalizeSideBar;
+		initFirebase(); 
+    personalizeSideBar("sidebarImg", "sidebarName");
+    initSuggestions();
+    initNotificationShower();
+    connectGuestButtonsToPopup(["add_att_btn", "heart_btn", "profile_btn"]);
+    console.log("is guest: " + isGuestUser());
+	</script>
+
+  <!--sidebar scripts-->
+  <script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+</body>
+
+</html>
